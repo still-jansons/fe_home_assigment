@@ -1,0 +1,17 @@
+@import "reset.css";
+@import "currency_picker.css";
+
+html {
+  font-family: Arial, sans-serif;
+}
+
+.size-screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

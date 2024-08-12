@@ -1,0 +1,14 @@
+@import 'reset.css';
+@import 'colors.css';
+
+html {
+  font-family: Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}

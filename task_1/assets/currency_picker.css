@@ -1,0 +1,114 @@
+#currency-picker {
+  padding: 16px;
+  border: 1px solid #a3a3a3;
+  border-radius: 4px;
+  filter: drop-shadow(2px 2px 2px #d5d5d5);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: clamp(300px, 50%, 400px);
+
+  .list-selected,
+  .list-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8px;
+    row-gap: 16px;
+  }
+
+  .list-selected {
+    column-gap: 16px;
+  }
+
+  .list-selected .option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    background: #ececec;
+    font-size: 14px;
+    cursor: default;
+
+    .btn-remove {
+      position: absolute;
+      cursor: pointer;
+      right: -7px;
+      top: -7px;
+      background: transparent;
+      color: #fff;
+
+      .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      &:hover .inner {
+        background: #fff;
+        border-color: #000;
+        color: #000;
+      }
+    }
+  }
+
+  .list-options .option {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #a3a3a3;
+    height: 32px;
+    padding: 0 4px;
+    background: #ececec;
+    color: #114371;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      font: inherit;
+      width: 0.8em;
+      height: 0.8em;
+      border: 1px solid #a3a3a3;
+      border-radius: 0.2em;
+      margin: 0;
+      display: grid;
+      place-content: center;
+
+      &::before {
+        content: "X";
+        font-size: 0.7em;
+        color: #f00;
+        font-weight: bold;
+        display: none;
+      }
+    }
+
+    &:hover:not(:has(input:checked)) {
+      background: #dcdcdc;
+    }
+
+    &:has(input:checked) {
+      background: #fff;
+
+      input[type="checkbox"]::before {
+        display: block;
+      }
+    }
+  }
+}
